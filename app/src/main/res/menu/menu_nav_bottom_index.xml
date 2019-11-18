@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_bottom_index_journey"
+        android:icon="@drawable/ic_bottom_navigation_journey"
+        android:title="行程管理"/>
+
+    <item android:id="@+id/nav_bottom_index_index"
+          android:icon="@drawable/ic_bottom_navigation_index"
+          android:title="应用首页"/>
+
+    <item android:id="@+id/nav_bottom_index_users"
+          android:icon="@drawable/ic_bottom_navigation_users"
+          android:title="个人中心"/>
+</menu>
