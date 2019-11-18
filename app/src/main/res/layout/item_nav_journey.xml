@@ -3,9 +3,38 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
-    <TextView
+    <!--搜索框-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="jouyney"/>
+        android:background="@drawable/shape_rec_white"
+        android:padding="10dp"
+        android:layout_margin="10dp">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="@string/search_placeholder"
+            android:background="@null"
+            android:textSize="14sp"
+            android:layout_weight="5"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center">
+            <Button
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/icon_search"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--行程卡片-->
+    <ListView
+        android:id="@+id/lv_journey"
+        android:divider="@null"
+        android:dividerHeight="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

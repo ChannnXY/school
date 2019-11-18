@@ -9,7 +9,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mvp_index;
     private List<Fragment> mFragmentsList;
     private MenuItem mMenuItem;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         mvp_index.addOnPageChangeListener(new pageChangeListener());
         initViewPagerAdapter();
     }
+
+
 
     //初始化页面适配器
     private void initViewPagerAdapter() {

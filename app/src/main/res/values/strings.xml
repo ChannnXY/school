@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">school-bus</string>
+    <string name="app_name">自由行</string>
+    <string name="journey_list_start">起始地</string>
+    <string name="journey_list_end">目的地</string>
+    <string name="journey_list_time">预计发车</string>
+    <string name="journey_list_place">上车地点</string>
+    <string name="journey_list_sign">立即签到</string>
+    <string name="journey_list_check">查看</string>
+    <string name="search_placeholder">请输入车牌号进行搜索</string>
 </resources>
