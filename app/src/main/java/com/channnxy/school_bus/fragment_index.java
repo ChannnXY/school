@@ -78,7 +78,7 @@ public class fragment_index extends Fragment{
         ArrayAdapter<String> destinationAdapter = new ArrayAdapter<String>(getActivity(),R.layout.item_index_spinner,destinationArray);
         msp_destination.setAdapter(destinationAdapter);
         msp_destination.setPrompt("请选择目的地");
-        msp_destination.setSelection(0);
+        msp_destination.setSelection(1);
     }
 
 //    行程卡片适配器初始化
