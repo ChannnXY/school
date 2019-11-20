@@ -1,193 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
-    <!--搜索框-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_rec_white"
-        android:padding="10dp"
-        android:layout_margin="10dp">
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:hint="@string/search_placeholder"
-            android:background="@null"
-            android:textSize="14sp"
-            android:layout_weight="5"/>
+        android:orientation="vertical">
+        <!--搜索框-->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center">
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@drawable/icon_search"/>
+            android:background="@drawable/shape_rec_white"
+            android:padding="10dp"
+            android:layout_margin="10dp">
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:hint="@string/search_placeholder"
+                android:background="@null"
+                android:textSize="14sp"
+                android:layout_weight="5"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center">
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/icon_search"/>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-    <!--自由行图片-->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|center_vertical|center">
-        <ImageView
+        <!--自由行图片-->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_text_vertical"/>
-    </LinearLayout>
-    <!--筛选卡片-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+            android:layout_gravity="center_horizontal|center_vertical|center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_text_vertical"/>
+        </LinearLayout>
+        <!--筛选卡片-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/shape_rec_white">
-            <!--起始地目的地-->
+            android:layout_margin="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                style="@style/margin_10">
+                android:orientation="vertical"
+                android:background="@drawable/shape_rec_white">
+                <!--起始地目的地-->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/journey_list_start"/>
-                    <Spinner
-                        android:id="@+id/sp_origin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ellipsize="end"
-                        android:textSize="20sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical|center">
-                    <ImageView
-                        android:layout_width="33dp"
-                        android:layout_height="33dp"
-                        android:background="@drawable/icon_right"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:gravity="end">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/journey_list_end"/>
-                    <Spinner
-                        android:id="@+id/sp_destination"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ellipsize="end"
-                        android:textSize="20sp"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <!--时间选择-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/margin_10">
-                <TextView
-                    android:id="@+id/tv_index_useDp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/font_regular"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/journey_list_start"/>
+                        <Spinner
+                            android:id="@+id/sp_origin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dialog"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical|center">
+                        <ImageView
+                            android:layout_width="33dp"
+                            android:layout_height="33dp"
+                            android:background="@drawable/icon_right"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:gravity="end">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/journey_list_end"/>
+                        <Spinner
+                            android:id="@+id/sp_destination"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dialog"
+                            android:textSize="20sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--时间选择-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/margin_10">
+                    <TextView
+                        android:id="@+id/tv_index_useDp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/font_regular"/>
+                </LinearLayout>
+
+                <!--学生票和老师票-->
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    style="@style/margin_10">
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="学生票"/>
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="教师票"/>
+                </RadioGroup>
+                <!--搜索按钮-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal">
+
+                    <Button
+                        style="@style/btn_checkBtn.margin_10"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_confirm_large"
+                        android:text="搜索"/>
+                </LinearLayout>
             </LinearLayout>
 
-            <!--学生票和老师票-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/journey_list_end"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/journey_list_end"/>
-            </LinearLayout>
 
-            <!--搜索按钮-->
-            <LinearLayout
+        </LinearLayout>
+        <!--公告标题-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/margin_10">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_line_vertical"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="公告"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+        <!--公告内容-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/margin_10">
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical|center_horizontal">
-                <Button
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/btn_confirm_large"
-                    style="@style/btn_checkBtn"
-                    android:text="搜索"/>
-            </LinearLayout>
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:text="@string/index_notice"/>
         </LinearLayout>
-
-    </LinearLayout>
-    <!--公告标题-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/margin_10">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_line_vertical"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="公告"
-            android:layout_marginLeft="10dp"/>
-    </LinearLayout>
-    <!--公告内容-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/margin_10">
-        <androidx.viewpager.widget.ViewPager
+        <!--行程标题-->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/shape_rec_white"/>
-    </LinearLayout>
-    <!--行程标题-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/margin_10">
-        <ImageView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_line_vertical"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="行程"
-            android:layout_marginLeft="10dp"/>
+            style="@style/margin_10">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_line_vertical"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="行程"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+        <!--行程内容-->
+        <ListView
+            android:id="@+id/lv_index_journey"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
-    <!--行程内容-->
-    <ListView
-        android:id="@+id/lv_index_journey"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+</ScrollView>
