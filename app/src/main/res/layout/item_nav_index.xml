@@ -121,17 +121,21 @@
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    style="@style/margin_10">
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
                     <RadioButton
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:button="@drawable/ic_index_check"
+                        android:checked="true"
                         android:text="学生票"/>
                     <RadioButton
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:button="@drawable/ic_index_check"
                         android:text="教师票"/>
                 </RadioGroup>
                 <!--搜索按钮-->
@@ -139,7 +143,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical|center_horizontal">
-
                     <Button
                         style="@style/btn_checkBtn.margin_10"
                         android:layout_width="200dp"
@@ -179,6 +182,9 @@
                 android:focusableInTouchMode="true"
                 android:marqueeRepeatLimit="marquee_forever"
                 android:scrollHorizontally="true"
+                android:lineSpacingExtra="8dp"
+                android:background="@drawable/shape_rec_white"
+                android:padding="10dp"
                 android:text="@string/index_notice"/>
         </LinearLayout>
         <!--行程标题-->
@@ -199,6 +205,7 @@
         <!--行程内容-->
         <ListView
             android:id="@+id/lv_index_journey"
+            android:divider="@null"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>

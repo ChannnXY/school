@@ -13,9 +13,7 @@ import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,7 +21,6 @@ import java.util.Date;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.viewpager.widget.ViewPager;
 
 public class fragment_index extends Fragment{
     //    fragment内部listView配置
@@ -86,11 +83,11 @@ public class fragment_index extends Fragment{
 
 //    行程卡片适配器初始化
     private void initJourneyAdapter() {
-
         mJourneyArrayList = Journey.getDefaultData();
         final journeyAdapter adapter = new journeyAdapter(getActivity(),mJourneyArrayList);
 
         mListView_journey.setAdapter(adapter);
+        Util.setListViewHeightBasedOnChildren(mListView_journey);
         mListView_journey.setSelection(0);
         mListView_journey.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -118,4 +115,6 @@ public class fragment_index extends Fragment{
             m_dialog.show();
         }
     }
+
+
 }
