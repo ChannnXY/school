@@ -25,10 +25,12 @@
     </style>
 
     <style name="margin_10">
-        <item name="android:background">@color/white</item>
         <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">10dp</item>
         <item name="android:layout_marginBottom" tools:targetApi="jelly_bean_mr1">10dp</item>
         <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">10dp</item>
+    </style>
+    <style name="margin_10.white" parent="margin_10">
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="padding_16">
