@@ -6,6 +6,7 @@
     <color name="white">#fff</color>
     <color name="black">#000</color>
     <color name="theme_color">#F19B00</color>
+    <color name="theme_brown">#524C4B</color>
     <color name="text_color">#515151</color>
     <color name="background_color">#F6F4F1</color>
 </resources>

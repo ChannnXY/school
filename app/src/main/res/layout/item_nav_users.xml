@@ -17,7 +17,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:background="@mipmap/ic_launcher"/>
+                android:background="@drawable/icon_header"/>
         </LinearLayout>
 
         <LinearLayout
@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="@color/white"
+                android:layout_marginBottom="15dp"
                 android:text="小陈"/>
             <TextView
                 android:layout_width="wrap_content"

@@ -17,8 +17,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:hint="@string/search_placeholder"
-                android:background="@null"
                 android:textSize="14sp"
+                android:background="@color/white"
                 android:layout_weight="5"/>
             <LinearLayout
                 android:layout_width="0dp"
@@ -42,16 +42,18 @@
                 android:background="@drawable/bg_text_vertical"/>
         </LinearLayout>
         <!--筛选卡片-->
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="10dp">
             <LinearLayout
+                android:id="@+id/linear_searchCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/shape_rec_white">
+                android:background="@drawable/shape_rec_white"
+                android:paddingBottom="25dp">
                 <!--起始地目的地-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -100,8 +102,7 @@
                             android:id="@+id/sp_destination"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:spinnerMode="dialog"
-                            android:textSize="20sp"/>
+                            android:spinnerMode="dialog"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -139,21 +140,21 @@
                         android:text="教师票"/>
                 </RadioGroup>
                 <!--搜索按钮-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal">
-                    <Button
-                        style="@style/btn_checkBtn.margin_10"
-                        android:layout_width="200dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/btn_confirm_large"
-                        android:text="搜索"/>
-                </LinearLayout>
             </LinearLayout>
-
-
-        </LinearLayout>
+            <LinearLayout
+                android:layout_below="@id/linear_searchCard"
+                android:layout_marginTop="-25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal">
+                <Button
+                    style="@style/btn_checkBtn.margin_10"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/btn_confirm_large"
+                    android:text="搜索"/>
+            </LinearLayout>
+        </RelativeLayout>
         <!--公告标题-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -205,7 +206,6 @@
         <!--行程内容-->
         <ListView
             android:id="@+id/lv_index_journey"
-            android:divider="@null"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>

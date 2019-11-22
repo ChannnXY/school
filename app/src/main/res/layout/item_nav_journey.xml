@@ -14,7 +14,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:hint="@string/search_placeholder"
-            android:background="@null"
+            android:background="@color/white"
             android:textSize="14sp"
             android:layout_weight="5"/>
         <LinearLayout
@@ -32,8 +32,6 @@
     <!--行程卡片-->
     <ListView
         android:id="@+id/lv_journey"
-        android:divider="@null"
-        android:dividerHeight="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>
