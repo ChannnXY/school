@@ -3,12 +3,14 @@ package com.channnxy.school_bus;
 import androidx.fragment.app.Fragment;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -33,6 +35,9 @@ public class fragment_index extends Fragment{
 
 //    日历
     private TextView mtv_calendar;
+
+//    搜索
+    private Button mbtn_search;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,12 +49,16 @@ public class fragment_index extends Fragment{
         msp_destination = index_view.findViewById(R.id.sp_destination);
         msp_origin = index_view.findViewById(R.id.sp_origin);
         initSpinnerAdapter();
-//    初始化日历
+    //  初始化日历
         mtv_calendar = index_view.findViewById(R.id.tv_index_useDp);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
         Date date = new Date(System.currentTimeMillis());
         mtv_calendar.setText(simpleDateFormat.format(date));
         mtv_calendar.setOnClickListener(new CalendarListener());
+
+    //  检索按钮监听
+        mbtn_search = index_view.findViewById(R.id.btn_index_search);
+        mbtn_search.setOnClickListener(new btnOnclickListener());
 
         return index_view;
     }
@@ -116,5 +125,12 @@ public class fragment_index extends Fragment{
         }
     }
 
-
+    //搜索按钮监听
+    private class btnOnclickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getActivity(),searchResultActivity.class);
+            startActivity(intent);
+        }
+    }
 }
