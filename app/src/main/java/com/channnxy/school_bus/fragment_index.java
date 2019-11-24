@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -32,8 +33,9 @@ public class fragment_index extends Fragment{
     //spinner
     private Spinner msp_origin;
     private Spinner msp_destination;
+    private ArrayAdapter<String> originAdapter;
 
-//    日历
+    //    日历
     private TextView mtv_calendar;
 
 //    搜索
@@ -68,20 +70,17 @@ public class fragment_index extends Fragment{
         String[] originArray = {"小和山","安吉校区","五常大道"};
         String[] destinationArray={"小和山","安吉校区","五常大道"};
 
-        ArrayAdapter<String> originAdapter = new ArrayAdapter<String>(getActivity(),R.layout.item_index_spinner,originArray);
+        originAdapter = new ArrayAdapter<String>(getActivity(),R.layout.item_index_spinner,originArray);
         msp_origin.setAdapter(originAdapter);
         msp_origin.setPrompt("请选择出发地");
         msp_origin.setSelection(0);
         msp_origin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                msp_origin.setSelection(position);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
+            public void onNothingSelected(AdapterView<?> parent) {            }
         });
 
         ArrayAdapter<String> destinationAdapter = new ArrayAdapter<String>(getActivity(),R.layout.item_index_spinner,destinationArray);
@@ -101,7 +100,8 @@ public class fragment_index extends Fragment{
         mListView_journey.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Intent intent = new Intent(getActivity(),journeyDetail.class);
+                startActivity(intent);
             }
         });
     }
