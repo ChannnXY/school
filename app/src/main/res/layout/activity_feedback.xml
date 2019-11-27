@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editPasswordActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        app:navigationIcon="@drawable/icon_back"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_brown"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                style="@style/btn_checkBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="建议反馈"/>
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:background="@drawable/shape_rec_white">
+        <!--原始密码-->
+        <EditText
+            android:id="@+id/tv_feedback_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="16sp"
+            android:gravity="top"
+            android:minLines="7"/>
+        <TextView
+            android:id="@+id/tv_feedback_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLength="500"
+            android:text="0/500"/>
+    </LinearLayout>
+
+    <!--确认按钮-->
+    <LinearLayout
+        android:id="@+id/linear_edit_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btn_editPassword"
+            style="@style/btn_checkBtn"
+            android:layout_width="180dp"
+            android:layout_height="36dp"
+            android:background="@drawable/btn_confirm_large"
+            android:text="提交反馈"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

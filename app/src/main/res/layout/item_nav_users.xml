@@ -82,6 +82,7 @@
     </LinearLayout>
     <!--功能栏-->
     <LinearLayout
+        android:id="@+id/linear_feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/margin_10"

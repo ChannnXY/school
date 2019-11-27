@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.main">
+        <activity android:name=".feedbackActivity">
+        </activity>
         <activity android:name=".journeyManagerActivity">
         </activity>
         <activity android:name=".editPasswordActivity">

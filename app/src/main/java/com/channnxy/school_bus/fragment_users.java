@@ -1,5 +1,7 @@
 package com.channnxy.school_bus;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,29 +17,46 @@ public class fragment_users extends Fragment implements View.OnClickListener {
     private GlobalData app;
     private LinearLayout mLinearLayout_edit;
     private LinearLayout mLinearLayout_exit;
+    private LinearLayout mLinearLayout_feedback;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View users_view = inflater.inflate(R.layout.item_nav_users,container,false);
         mLinearLayout_edit = users_view.findViewById(R.id.linear_user_editPassword);
         mLinearLayout_exit = users_view.findViewById(R.id.linear_user_exit);
+        mLinearLayout_feedback = users_view.findViewById(R.id.linear_feedback);
         mLinearLayout_edit.setOnClickListener(this);
         mLinearLayout_exit.setOnClickListener(this);
+        mLinearLayout_feedback.setOnClickListener(this);
         return users_view;
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent;
         switch (v.getId()){
             case R.id.linear_user_editPassword:{
-                intent = new Intent(getContext(),editPasswordActivity.class);
+                Intent intent = new Intent(getContext(),editPasswordActivity.class);
                 startActivity(intent);
                 break;
             }
             case R.id.linear_user_exit:{
                 app.loginType = -1;
-                intent = new Intent(getContext(),loginActivity.class);
+                AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                alert.setPositiveButton("确定退出", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getContext(),loginActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                alert.setNegativeButton("不退出了",null);
+                alert.setMessage("退出之后将清空登录状态，您确定要退出吗");
+                alert.show();
+
+                break;
+            }
+            case R.id.linear_feedback:{
+                Intent intent = new Intent(getContext(),feedbackActivity.class);
                 startActivity(intent);
                 break;
             }
