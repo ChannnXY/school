@@ -7,9 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import com.channnxy.school_bus.R;
 
 import java.util.ArrayList;
 
@@ -23,6 +20,8 @@ public class fragment_journey extends Fragment{
     public ArrayList<Journey> mJourneyArrayList;
 
     public Intent mIntent;
+
+    private GlobalData app;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,9 +36,14 @@ public class fragment_journey extends Fragment{
         mListView_journey.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mIntent = new Intent(getActivity(),journeyDetail.class);
-                mIntent.putExtra("mode",false);
-                startActivity(mIntent);
+                if(app.loginMode.equals("我是司机")){
+                    mIntent = new Intent(getActivity(), journeyManagerActivity.class);
+                    startActivity(mIntent);
+                }else{
+                    mIntent = new Intent(getActivity(), journeyDetailActivity.class);
+                    mIntent.putExtra("mode",false);
+                    startActivity(mIntent);
+                }
             }
         });
         return journey_view;

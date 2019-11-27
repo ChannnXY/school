@@ -53,6 +53,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
+                    android:textSize="16sp"
                     android:layout_marginRight="20dp"
                     android:hint="请输入学号"/>
             </LinearLayout>
@@ -77,6 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
                     android:inputType="textPassword"
+                    android:textSize="16sp"
                     android:hint="请输入密码(默认身份证后六位)"
                     android:layout_marginRight="20dp"/>
             </LinearLayout>

@@ -7,7 +7,9 @@
     <string name="journey_list_sign">立即签到</string>
     <string name="journey_list_check">查看</string>
     <string name="search_placeholder">请输入车牌号进行搜索</string>
-    <string name="index_notice">二零一九年十月一日车次为浙C29887的车停开一次，次日恢复，给各位师生带来不便</string>
+    <string name="index_notice">公告：二零一九年十月一日车次为浙C29887的车停开一次，次日恢复，给各位师生带来不便</string>
     <string name="index_stops">小和山校区正对面、屏峰公交站、留和路北口</string>
     <string name="index_reason">要回安吉校区取我的档案。</string>
+    <string name="journeyManager_teacher">老师</string>
+    <string name="journeyManager_student">学生</string>
 </resources>

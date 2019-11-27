@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 
-public class journeyDetail extends AppCompatActivity {
+public class journeyDetailActivity extends AppCompatActivity {
     private EditText mTv_name ,mTv_number, mTv_phone, mTv_reason;
 
     @Override

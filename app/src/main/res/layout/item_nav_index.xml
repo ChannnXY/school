@@ -117,33 +117,11 @@
                         android:layout_height="wrap_content"
                         style="@style/font_regular"/>
                 </LinearLayout>
-
-                <!--学生票和老师票-->
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:orientation="horizontal">
-                    <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:button="@drawable/ic_index_check"
-                        android:checked="true"
-                        android:text="学生票"/>
-                    <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:button="@drawable/ic_index_check"
-                        android:text="教师票"/>
-                </RadioGroup>
                 <!--搜索按钮-->
             </LinearLayout>
             <LinearLayout
                 android:layout_below="@id/linear_searchCard"
-                android:layout_marginTop="-25dp"
+                android:layout_marginTop="-28dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal">

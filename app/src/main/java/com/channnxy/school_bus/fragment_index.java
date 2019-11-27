@@ -15,7 +15,6 @@ import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,6 +25,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class fragment_index extends Fragment{
+    //    全局变量
+    private GlobalData app;
     //    fragment内部listView配置
     private ListView mListView_journey;
     private ArrayList<Journey> mJourneyArrayList;
@@ -38,7 +39,7 @@ public class fragment_index extends Fragment{
     //    日历
     private TextView mtv_calendar;
 
-//    搜索
+    //    搜索
     private Button mbtn_search;
     @Nullable
     @Override
@@ -100,9 +101,14 @@ public class fragment_index extends Fragment{
         mListView_journey.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(),journeyDetail.class);
-                intent.putExtra("mode",false);
-                startActivity(intent);
+                if(app.loginMode.equals("我是司机")){
+                    Intent intent = new Intent(getActivity(), journeyManagerActivity.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(getActivity(), journeyDetailActivity.class);
+                    intent.putExtra("mode",false);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -130,8 +136,8 @@ public class fragment_index extends Fragment{
     private class btnOnclickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(getActivity(),searchResultActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(getActivity(), journeyListActivity.class);
+                startActivity(intent);
         }
     }
 }

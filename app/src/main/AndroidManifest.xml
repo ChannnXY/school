@@ -9,9 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.main">
-        <activity android:name=".journeyDetail">
+        <activity android:name=".journeyManagerActivity">
         </activity>
-        <activity android:name=".searchResultActivity">
+        <activity android:name=".editPasswordActivity">
+        </activity>
+        <activity android:name=".journeyDetailActivity">
+        </activity>
+        <activity android:name=".journeyListActivity">
         </activity>
         <activity android:name=".loginActivity">
         </activity>

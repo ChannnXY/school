@@ -19,6 +19,18 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="font_tiny">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="font_tiny.red" parent="font_tiny">
+        <item name="android:color">#B81515</item>
+    </style>
+
+    <style name="font_tiny.green" parent="font_tiny">
+        <item name="android:color">#0FA318</item>
+    </style>
+
     <style name="btn_checkBtn">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/white</item>
@@ -43,6 +55,10 @@
         <item name="android:paddingRight">16dp</item>
         <item name="android:paddingTop">4dp</item>
         <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="padding_16.white" parent="padding_16">
+        <item name="android:textColor">@color/white</item>
     </style>
     
     <style name="edit_text">

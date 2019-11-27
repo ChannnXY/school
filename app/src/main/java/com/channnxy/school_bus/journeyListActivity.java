@@ -3,7 +3,6 @@ package com.channnxy.school_bus;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,23 +10,23 @@ import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class searchResultActivity extends AppCompatActivity {
+public class journeyListActivity extends AppCompatActivity {
     private ListView lv_search_list;
     private ArrayList<Train> mTrainArrayList;
+
+    private GlobalData app;
 
     //初始化日历
     private TextView mTv_calendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_result);
+        setContentView(R.layout.activity_journey_list);
 
         //初始化适配器
         initSearchListAdapter();
@@ -49,9 +48,15 @@ public class searchResultActivity extends AppCompatActivity {
         lv_search_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(searchResultActivity.this,journeyDetail.class);
-                intent.putExtra("mode",true);
-                startActivity(intent);
+                if(app.loginMode.equals("我是司机")){
+                    Intent intent = new Intent(journeyListActivity.this, journeyManagerActivity.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(journeyListActivity.this, journeyDetailActivity.class);
+                    intent.putExtra("mode",true);
+                    startActivity(intent);
+                }
+
             }
         });
     }
@@ -73,7 +78,7 @@ public class searchResultActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Calendar m_calendar = Calendar.getInstance();
-            DatePickerDialog m_dialog = new DatePickerDialog(searchResultActivity.this, new DatePickerDialog.OnDateSetListener() {
+            DatePickerDialog m_dialog = new DatePickerDialog(journeyListActivity.this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                     String desc = year + "年" + month + "月" + dayOfMonth + "日";
