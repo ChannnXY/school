@@ -101,6 +101,7 @@ public class fragment_index extends Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(),journeyDetail.class);
+                intent.putExtra("mode",false);
                 startActivity(intent);
             }
         });

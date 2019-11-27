@@ -38,6 +38,7 @@ public class fragment_journey extends Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mIntent = new Intent(getActivity(),journeyDetail.class);
+                mIntent.putExtra("mode",false);
                 startActivity(mIntent);
             }
         });
