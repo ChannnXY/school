@@ -18,6 +18,7 @@ public class fragment_users extends Fragment implements View.OnClickListener {
     private LinearLayout mLinearLayout_edit;
     private LinearLayout mLinearLayout_exit;
     private LinearLayout mLinearLayout_feedback;
+    private LinearLayout mLinearLayout_identify;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public class fragment_users extends Fragment implements View.OnClickListener {
         mLinearLayout_edit = users_view.findViewById(R.id.linear_user_editPassword);
         mLinearLayout_exit = users_view.findViewById(R.id.linear_user_exit);
         mLinearLayout_feedback = users_view.findViewById(R.id.linear_feedback);
+        mLinearLayout_identify = users_view.findViewById(R.id.linear_user_identify);
+        mLinearLayout_identify.setOnClickListener(this);
         mLinearLayout_edit.setOnClickListener(this);
         mLinearLayout_exit.setOnClickListener(this);
         mLinearLayout_feedback.setOnClickListener(this);
@@ -57,6 +60,11 @@ public class fragment_users extends Fragment implements View.OnClickListener {
             }
             case R.id.linear_feedback:{
                 Intent intent = new Intent(getContext(),feedbackActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.linear_user_identify:{
+                Intent intent = new Intent(getContext(),identifyActivity.class);
                 startActivity(intent);
                 break;
             }

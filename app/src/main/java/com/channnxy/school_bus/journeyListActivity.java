@@ -48,7 +48,7 @@ public class journeyListActivity extends AppCompatActivity {
         lv_search_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(app.loginMode.equals("我是司机")){
+                if(app.loginMode==2){
                     Intent intent = new Intent(journeyListActivity.this, journeyManagerActivity.class);
                     startActivity(intent);
                 }else{

@@ -50,10 +50,13 @@
                         android:background="@drawable/icon_username"/>
                 </LinearLayout>
                 <EditText
+                    android:id="@+id/tv_login_username"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
                     android:textSize="16sp"
+                    android:inputType="number"
+                    android:saveEnabled="false"
                     android:layout_marginRight="20dp"
                     android:hint="请输入学号"/>
             </LinearLayout>
@@ -74,38 +77,23 @@
                         android:background="@drawable/icon_password"/>
                 </LinearLayout>
                 <EditText
+                    android:id="@+id/tv_login_password"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
-                    android:inputType="textPassword"
+                    android:inputType="numberPassword"
                     android:textSize="16sp"
+                    android:saveEnabled="false"
                     android:hint="请输入密码(默认身份证后六位)"
                     android:layout_marginRight="20dp"/>
             </LinearLayout>
-            <!--身份选择-->
-            <LinearLayout
+            <CheckBox
+                android:id="@+id/cb_remember_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center|center_horizontal">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/icon_identity"/>
-                </LinearLayout>
-                <Spinner
-                    android:id="@+id/sp_login_identity"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:layout_marginRight="20dp"
-                    android:spinnerMode="dialog"/>
-            </LinearLayout>
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:text="记住密码"/>
         </LinearLayout>
         <Button
             android:id="@+id/btn_login"

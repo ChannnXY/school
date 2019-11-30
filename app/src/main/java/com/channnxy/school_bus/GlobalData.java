@@ -5,5 +5,7 @@ import android.app.Application;
 public class GlobalData extends Application {
 //    登录态 -1未登录 0老师 1学生 2司机
     public static int loginType;
-    public static String loginMode;
+    public static int loginMode;
+    public static String username;
+    public static String url = "http://10.11.11.215:3000/";
 }

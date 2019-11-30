@@ -36,7 +36,7 @@ public class fragment_journey extends Fragment{
         mListView_journey.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(app.loginMode.equals("我是司机")){
+                if(app.loginMode==2){
                     mIntent = new Intent(getActivity(), journeyManagerActivity.class);
                     startActivity(mIntent);
                 }else{
