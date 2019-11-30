@@ -42,7 +42,7 @@ public class identifyActivity extends AppCompatActivity {
         final ArrayAdapter<String> identityAdapter = new ArrayAdapter<String>(this,R.layout.item_index_spinner,identityArray);
         msp_identity.setAdapter(identityAdapter);
         msp_identity.setPrompt("请选择你的身份");
-        String url = "http://10.11.11.215:3000/users/getIdentity?username="+app.username;
+        String url = app.url+"users/getIdentity?username="+app.username;
         GetInfoAsyncTask getInfoAsyncTask = new GetInfoAsyncTask();
         getInfoAsyncTask.execute(url);
         msp_identity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -95,7 +95,7 @@ public class identifyActivity extends AppCompatActivity {
         public void onClick(View v) {
             EditText tv_identity_passsword = findViewById(R.id.tv_identify_password);
             String password = tv_identity_passsword.getText().toString();
-            String url = "http://10.11.11.215:3000/users/updateIdentity";
+            String url = app.url+"users/updateIdentity";
             JSONObject req = new JSONObject();
             StringBuffer data = new StringBuffer("identity=");
             data.append(identity);

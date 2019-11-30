@@ -7,5 +7,5 @@ public class GlobalData extends Application {
     public static int loginType;
     public static int loginMode;
     public static String username;
-    public static String url = "http://10.11.11.215:3000/";
+    public static String url = "http://117.50.22.42:3000/";
 }
