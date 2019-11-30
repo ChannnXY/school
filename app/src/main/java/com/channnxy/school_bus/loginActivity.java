@@ -83,7 +83,7 @@ public class loginActivity extends AppCompatActivity {
                 httpReqData.url=jsonObjects[0].getString("url");
                 HttpRespData resp_data = HttpRequestUtil.getData(httpReqData);
                 JSONObject res = new JSONObject(resp_data.content);
-//                Log.i("___response_data___",res.toString());
+                Log.i("___response_data___",res.toString());
                 return res;
             } catch (JSONException e) {
                 e.printStackTrace();

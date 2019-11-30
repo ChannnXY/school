@@ -2,6 +2,7 @@ package com.channnxy.school_bus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -97,6 +99,8 @@ public class identifyActivity extends AppCompatActivity {
             JSONObject req = new JSONObject();
             StringBuffer data = new StringBuffer("identity=");
             data.append(identity);
+            data.append("&username=");
+            data.append(app.username);
             try {
                 req.put("url",url);
                 req.put("data",data);
@@ -106,6 +110,8 @@ public class identifyActivity extends AppCompatActivity {
             if(password.equals("123456")){
                 UpdateIdentity updateIdentity = new UpdateIdentity();
                 updateIdentity.execute(req);
+            }else{
+                Toast.makeText(identifyActivity.this, "管理员密码错误", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -119,6 +125,7 @@ public class identifyActivity extends AppCompatActivity {
             httpReqData.url = jsonObjects[0].getString("url");
             StringBuffer data = new StringBuffer(jsonObjects[0].getString("data"));
             httpReqData.params = data;
+//            Log.i("httpReqData.params",httpReqData.params.toString());
             HttpRespData resp_data = HttpRequestUtil.postUrl(httpReqData);
             JSONObject res = new JSONObject(resp_data.content);
             return res;
@@ -131,7 +138,19 @@ public class identifyActivity extends AppCompatActivity {
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
         super.onPostExecute(jsonObject);
-        Log.i("----res-----",jsonObject.toString());
+        if(!jsonObject.isNull("data")){
+            try {
+                JSONObject res = jsonObject.getJSONObject("data");
+                Toast.makeText(identifyActivity.this, res.getString("msg"), Toast.LENGTH_SHORT).show();
+                if(res.getInt("code")==200){
+                    Intent intent = new Intent(identifyActivity.this,MainActivity.class);
+                    startActivity(intent);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 }
 }
